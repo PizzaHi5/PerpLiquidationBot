@@ -24,6 +24,7 @@ const func: DeployFunction = async function (hre: any) {
         args: [metadata.contracts.Vault.address, uniswapV3SwapRouterAddress, uniswapV3Factory, crvFactories],
         log: true,
         autoMine: true, // speed up deployment on local network (ganache, hardhat), no effect on live networks
+        gaslimit: 3200000,
     })
 
     const { ethers } = hre
